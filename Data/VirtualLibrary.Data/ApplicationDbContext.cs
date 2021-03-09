@@ -63,21 +63,18 @@
                 .Entity<BookGenre>()
                 .HasOne(bg => bg.Book)
                 .WithMany(bg => bg.Genres)
-                .HasForeignKey(bg => bg.BookId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(bg => bg.BookId);
 
             builder.Entity<BookGenre>()
                 .HasOne(bg => bg.Genre)
                 .WithMany(bg => bg.Books)
-                .HasForeignKey(bg => bg.GenreId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(bg => bg.GenreId);
 
             builder
                 .Entity<Book>()
                 .HasOne(b => b.Author)
                 .WithMany(a => a.Books)
-                .HasForeignKey(b => b.AuthorId)
-                .OnDelete(DeleteBehavior.Restrict);
+                .HasForeignKey(b => b.AuthorId);
 
             // Needed for Identity models configuration
             base.OnModelCreating(builder);
