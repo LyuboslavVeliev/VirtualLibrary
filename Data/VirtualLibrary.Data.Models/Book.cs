@@ -4,12 +4,10 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Text;
+    using VirtualLibrary.Data.Common.Models;
 
-    public class Book
+    public class Book : BaseDeletableModel<int>
     {
-        [Key]
-        public int BookId { get; set; }
-
         [Required]
         [MaxLength(50)]
         public string Title { get; set; }
@@ -23,7 +21,7 @@
 
         public int AuthorId { get; set; }
 
-        public Author Author { get; set; }
+        public virtual Author Author { get; set; }
 
         public ICollection<BookGenre> Genres { get; set; }
             = new HashSet<BookGenre>();

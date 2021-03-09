@@ -3,8 +3,9 @@
     using System;
     using System.Collections.Generic;
     using System.Text;
+    using VirtualLibrary.Data.Common.Models;
 
-    public class BookGenre
+    public class BookGenre : BaseDeletableModel<int>
     {
         public int BookId { get; set; }
 

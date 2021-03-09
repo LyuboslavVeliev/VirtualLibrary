@@ -4,12 +4,10 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Text;
+    using VirtualLibrary.Data.Common.Models;
 
-    public class Author
+    public class Author : BaseDeletableModel<int>
     {
-        [Key]
-        public int AuthorId { get; set; }
-
         [Required]
         [MaxLength(50)]
         public string FirstName { get; set; }
