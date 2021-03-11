@@ -1,6 +1,5 @@
 ﻿namespace VirtualLibrary.Web.Controllers
 {
-    
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -22,7 +21,7 @@
         [HttpPost]
         public async Task<IActionResult> Create(InputBookModel inputBookModel)
         {
-            await this.booksService.CreateBook(inputBookModel.Title, inputBookModel.Description,
+            await this.booksService.CreateBook(inputBookModel.Title, inputBookModel.Description, inputBookModel.Image,
                 inputBookModel.ReleaseDate, inputBookModel.AuthorName);
 
             return this.View(inputBookModel);

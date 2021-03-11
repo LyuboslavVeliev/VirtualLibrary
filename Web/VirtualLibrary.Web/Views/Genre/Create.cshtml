@@ -1,0 +1,12 @@
+﻿@using VirtualLibrary.Web.ViewModels.Genre
+@model InputGenreModel
+
+<form method="post" asp-controller="Genre" asp-action="Create">
+    <div>
+        <label for="name">Name</label>
+        <input class="form-control" asp-for="Name" />
+    </div>
+    <div>
+        <button type="submit">Create</button>
+    </div>
+</form>

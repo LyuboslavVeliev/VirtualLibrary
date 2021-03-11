@@ -2,8 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.Text;
     using System.Linq;
+    using System.Text;
     using System.Threading.Tasks;
     using VirtualLibrary.Data.Common.Repositories;
     using VirtualLibrary.Data.Models;
@@ -19,12 +19,13 @@
             this.authorRepository = authorRepository;
         }
 
-        public async Task CreateBook(string title, string description, DateTime releaseDate, string authorLastName)
+        public async Task CreateBook(string title, string description, string image, DateTime releaseDate, string authorLastName)
         {
             var book = new Book
             {
                 Title = title,
                 Description = description,
+                Image = image,
                 ReleaseDate = releaseDate,
                 Author = this.authorRepository.All().FirstOrDefault(a => a.LastName == authorLastName),
             };

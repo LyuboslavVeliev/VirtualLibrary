@@ -10,6 +10,8 @@
 
         public string Description { get; set; }
 
+        public string Image { get; set; }
+
         public DateTime ReleaseDate { get; set; }
 
         public string AuthorName { get; set; }

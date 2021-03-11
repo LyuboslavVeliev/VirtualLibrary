@@ -3,18 +3,30 @@
 
 <form method="post" asp-controller="Book" asp-action="Create">
     <div>
+        <label for="title">Title</label>
         <input class="form-control" asp-for="Title" />
     </div>
     <div>
+        <label for="description">Description</label>
         <textarea class="form-control" asp-for="Description"></textarea>
     </div>
     <div>
+        <label for="image url">Image URL</label>
+        <input class="form-control" asp-for="Image" />
+    </div>
+    <div>
+        <<label for="release date">Release Date</label>
         <input class="form-control" asp-for="ReleaseDate" />
     </div>
     <div>
+        <label for="author last name">Author Last Name</label>
         <input class="form-control" asp-for="AuthorName" />
     </div>
     <div>
+        <label for="genre">Genre</label>
+        <input class="form-control" asp-for="Genre" />
+    </div>
+    <div>
         <button type="submit">Create</button>
-   </div>
+    </div>
 </form>

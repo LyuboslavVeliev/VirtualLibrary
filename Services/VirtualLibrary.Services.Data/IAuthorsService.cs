@@ -5,8 +5,8 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public interface IBooksService
+    public interface IAuthorsService
     {
-        Task CreateBook(string title, string description, string image, DateTime releaseDate, string authorLastName);
+        Task Create(string firstName, string lastName);
     }
 }
