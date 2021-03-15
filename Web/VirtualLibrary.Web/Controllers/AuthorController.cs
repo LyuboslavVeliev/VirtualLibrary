@@ -23,7 +23,8 @@
         {
             await this.authorsService.Create(inputAuthorModel.FirstName, inputAuthorModel.LastName);
 
-            return this.View(inputAuthorModel);
+            // return this.View(inputAuthorModel);
+            return this.Redirect("/");
         }
 
         public async Task<IActionResult> Create()

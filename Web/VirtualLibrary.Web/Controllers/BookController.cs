@@ -24,7 +24,8 @@
             await this.booksService.CreateBook(inputBookModel.Title, inputBookModel.Description, inputBookModel.Image,
                 inputBookModel.ReleaseDate, inputBookModel.AuthorName);
 
-            return this.View(inputBookModel);
+            // return this.View(inputBookModel);
+            return this.Redirect("/");
         }
 
         public async Task<IActionResult> Create()

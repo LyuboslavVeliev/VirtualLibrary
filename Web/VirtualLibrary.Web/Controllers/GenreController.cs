@@ -23,7 +23,8 @@
         {
             await this.genresService.Create(inputGenreModel.Name);
 
-            return this.View(inputGenreModel);
+            // return this.View(inputGenreModel);
+            return this.Redirect("/");
         }
 
         public async Task<IActionResult> Create()
