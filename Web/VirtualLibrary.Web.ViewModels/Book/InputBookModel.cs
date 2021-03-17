@@ -4,6 +4,8 @@
     using System.Collections.Generic;
     using System.Text;
 
+    using Microsoft.AspNetCore.Mvc.Rendering;
+
     public class InputBookModel
     {
         public string Title { get; set; }
@@ -16,6 +18,8 @@
 
         public string AuthorName { get; set; }
 
-        public string Genre { get; set; }
+        public List<int> GenresId { get; set; }
+
+        public IEnumerable<SelectListItem> Genre { get; set; }
     }
 }

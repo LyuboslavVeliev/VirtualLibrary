@@ -3,18 +3,31 @@
 @model IEnumerable<DisplayBookModel>
 @{ this.ViewData["Title"] = "Home Page"; }
 
+@if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+    {
+                <a class="btn" asp-area="" asp-controller="Book" asp-action="Create">Add Book</a>
+            
+            
+                 <a class="btn" asp-area="" asp-controller="Genre" asp-action="Create">Add Genre</a>
+            
+            
+                <a class="btn" asp-area="" asp-controller="Author" asp-action="Create">Add Author</a>
+            
+      }
+
 <h2>Our Books</h2>
 
+
+
 @foreach (var book in Model)
- {
-    <div class="row">
-        <div class="col-md-3 col-md-offset-3">
-            <img class="rounded" height="200" width="200" src="@book.Image" alt="Image" />
-        </div>
-        <div class="col-md-3">
-            <h3>
-                <label for="title">@book.Title</label>
-            </h3>
-        </div>
+{
+<div class="row">
+    <div class="col-md-3 col-md-offset-3">
+        <img class="rounded" height="200" width="200" src="@book.Image" alt="Image" />
     </div>
- }
+    <div class="col-md-3">
+        <h3>
+            <label for="title">@book.Title</label>
+        </h3>
+    </div>
+</div>}

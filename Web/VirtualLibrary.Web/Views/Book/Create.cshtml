@@ -23,8 +23,9 @@
         <input class="form-control" asp-for="AuthorName" />
     </div>
     <div>
-        <label for="genre">Genre</label>
-        <input class="form-control" asp-for="Genre" />
+        <label asp-for="GenresId" class="text-light">Genres</label>
+        <select multiple="multiple" class="multi-select form-control" id="GenresId" asp-for="GenresId" asp-items="@this.Model.Genre">
+        </select>
     </div>
     <div>
         <button type="submit">Create</button>

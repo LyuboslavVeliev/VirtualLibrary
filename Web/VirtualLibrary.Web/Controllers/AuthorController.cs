@@ -4,8 +4,9 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
-
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using VirtualLibrary.Common;
     using VirtualLibrary.Services.Data;
     using VirtualLibrary.Web.ViewModels.Author;
 
@@ -19,6 +20,7 @@
         }
 
         [HttpPost]
+        // [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> Create(InputAuthorModel inputAuthorModel)
         {
             await this.authorsService.Create(inputAuthorModel.FirstName, inputAuthorModel.LastName);
@@ -27,6 +29,7 @@
             return this.Redirect("/");
         }
 
+        // [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> Create()
         {
             return this.View();
