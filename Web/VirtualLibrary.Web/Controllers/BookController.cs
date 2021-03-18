@@ -23,7 +23,7 @@
         }
 
         [HttpPost]
-        // [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> Create(InputBookModel inputBookModel)
         {
             if (!this.ModelState.IsValid)
@@ -39,7 +39,7 @@
             return this.Redirect("/");
         }
 
-        // [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> Create()
         {
             var book = new InputBookModel

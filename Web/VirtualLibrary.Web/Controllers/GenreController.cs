@@ -20,7 +20,7 @@
         }
 
         [HttpPost]
-        // [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> Create(InputGenreModel inputGenreModel)
         {
             await this.genresService.Create(inputGenreModel.Name);
@@ -29,7 +29,7 @@
             return this.Redirect("/");
         }
 
-        // [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> Create()
         {
             return this.View();

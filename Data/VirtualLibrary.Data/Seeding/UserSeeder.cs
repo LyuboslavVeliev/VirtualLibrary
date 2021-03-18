@@ -24,14 +24,14 @@
             ApplicationUser user1 = new ApplicationUser
             {
                 UserName = "Lyuboslav",
-                PasswordHash = "123456789",
+                PasswordHash = "L%123456789",
                 Email = "lub.veliev@abv.bg",
             };
 
             ApplicationUser user2 = new ApplicationUser
             {
-                UserName = "Kristyan",
-                PasswordHash = "1234567890",
+                UserName = "Kristiyan",
+                PasswordHash = "K%1234567890",
                 Email = "simov.kris@abv.bg",
             };
 
