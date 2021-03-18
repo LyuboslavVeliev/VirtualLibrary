@@ -1,0 +1,26 @@
+﻿@using VirtualLibrary.Web.ViewModels.Book
+@model BookDetailsModel
+
+@{ 
+    ViewData["Title"] = $"{Model.Title}";
+}
+
+<h2 class="text-center">@Model.Title</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <img class="rounded" height="300" width="300" src="@Model.Image" alt="Image" />
+    </div>
+    <div class="col-md-6">
+        <h4>by @Model.AuthorFullName</h4>
+        <h5>@Model.ReleaseDate</h5>
+    </div>
+    <div class="col-md-6">
+        <h5>Description</h5>
+        <label>@Model.Description</label>
+    </div>
+    <div class="col-md-6">
+        <h5>Genre</h5>
+        <label>@String.Join(", ", Model.Genres)</label>
+    </div>
+</div>

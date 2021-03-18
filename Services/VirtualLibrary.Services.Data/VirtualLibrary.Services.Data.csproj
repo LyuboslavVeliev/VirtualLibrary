@@ -23,6 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\VirtualLibrary.Data.Common\VirtualLibrary.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\VirtualLibrary.Data.Models\VirtualLibrary.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Web\VirtualLibrary.Web.ViewModels\VirtualLibrary.Web.ViewModels.csproj" />
     <ProjectReference Include="..\VirtualLibrary.Services.Mapping\VirtualLibrary.Services.Mapping.csproj" />
   </ItemGroup>
 

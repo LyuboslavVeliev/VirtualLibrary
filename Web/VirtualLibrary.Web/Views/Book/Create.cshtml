@@ -1,33 +1,36 @@
 ﻿@using VirtualLibrary.Web.ViewModels.Book
 @model InputBookModel
 
+<h2>Add Book</h2>
+
 <form method="post" asp-controller="Book" asp-action="Create">
-    <div>
+    <div class="form-group">
         <label for="title">Title</label>
-        <input class="form-control" asp-for="Title" />
+        <input class="form-control" asp-for="Title" placeholder="Title" />
     </div>
-    <div>
+    <div class="form-group">
         <label for="description">Description</label>
-        <textarea class="form-control" asp-for="Description"></textarea>
+        <textarea class="form-control" asp-for="Description" placeholder="Description"></textarea>
     </div>
-    <div>
+    <div class="form-group">
         <label for="image url">Image URL</label>
-        <input class="form-control" asp-for="Image" />
+        <input class="form-control" asp-for="Image" placeholder="Image URL" />
     </div>
-    <div>
-        <<label for="release date">Release Date</label>
-        <input class="form-control" asp-for="ReleaseDate" />
+    <div class="form-group">
+        <label for="release date">Release Date</label>
+        <input class="form-control" asp-for="ReleaseDate" placeholder="Release Date" />
     </div>
-    <div>
-        <label for="author last name">Author Last Name</label>
-        <input class="form-control" asp-for="AuthorName" />
+    <div class="form-group">
+        <label asp-for="AuthorId">Author</label>
+        <select multiple="multiple" class="multi-select form-control" id="AuthorId" asp-for="AuthorId" asp-items="@this.Model.Author">
+        </select>
     </div>
-    <div>
-        <label asp-for="GenresId" class="text-light">Genres</label>
+    <div class="form-group">
+        <label asp-for="GenresId">Genres</label>
         <select multiple="multiple" class="multi-select form-control" id="GenresId" asp-for="GenresId" asp-items="@this.Model.Genre">
         </select>
     </div>
-    <div>
-        <button type="submit">Create</button>
+    <div class="form-group">
+        <button type="submit">Save Book</button>
     </div>
 </form>
