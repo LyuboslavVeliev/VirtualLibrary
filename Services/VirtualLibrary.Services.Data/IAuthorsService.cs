@@ -5,12 +5,8 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    using Microsoft.AspNetCore.Mvc.Rendering;
-
-    public interface IGenresService
+    public interface IAuthorsService
     {
-        Task Create(string name);
-
-        IEnumerable<SelectListItem> GetList();
+        Task Create(string firstName, string lastName);
     }
 }

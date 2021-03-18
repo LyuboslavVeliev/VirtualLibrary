@@ -7,6 +7,6 @@
 
     public interface IBooksService
     {
-        Task CreateBook(string title, string description, DateTime releaseDate, string authorLastName);
+        Task CreateBook(string title, string description, string image, DateTime releaseDate, string authorLastName);
     }
 }

@@ -16,6 +16,8 @@
         [MaxLength(1000)]
         public string Description { get; set; }
 
+        public string Image { get; set; }
+
         [Required]
         public DateTime ReleaseDate { get; set; }
 

@@ -1,10 +1,19 @@
 ﻿@using VirtualLibrary.Common
-@{
-    this.ViewData["Title"] = "Home Page";
-}
+@using VirtualLibrary.Web.ViewModels.Book
+@model IEnumerable<DisplayBookModel>
+@{ this.ViewData["Title"] = "Home Page"; }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome to @GlobalConstants.SystemName!</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-    <a asp-controller="Book" asp-action="Create">Create Book</a>
-</div>
+<h2>Our Books</h2>
+
+@foreach (var book in Model)
+{
+<div class="row">
+    <div class="col-md-3 col-md-offset-3">
+        <img class="rounded" height="200" width="200" src="@book.Image" alt="Image" />
+    </div>
+    <div class="col-md-3">
+        <h3>
+            <label for="title">@book.Title</label>
+        </h3>
+    </div>
+</div>}

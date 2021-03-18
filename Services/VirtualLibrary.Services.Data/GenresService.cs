@@ -4,10 +4,11 @@
     using System.Linq;
     using System.Collections.Generic;
     using System.Text;
-    using System.Web.Mvc;
     using VirtualLibrary.Data.Common.Repositories;
     using VirtualLibrary.Data.Models;
     using System.Threading.Tasks;
+
+    using Microsoft.AspNetCore.Mvc.Rendering;
 
     public class GenresService : IGenresService
     {
