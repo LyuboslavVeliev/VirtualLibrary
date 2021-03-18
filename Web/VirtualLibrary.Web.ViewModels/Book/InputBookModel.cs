@@ -16,7 +16,9 @@
 
         public DateTime ReleaseDate { get; set; }
 
-        public string AuthorName { get; set; }
+        public List<int> AuthorId { get; set; }
+
+        public IEnumerable<SelectListItem> Author { get; set; }
 
         public List<int> GenresId { get; set; }
 

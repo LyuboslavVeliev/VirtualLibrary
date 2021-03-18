@@ -25,7 +25,6 @@
         {
             await this.genresService.Create(inputGenreModel.Name);
 
-            // return this.View(inputGenreModel);
             return this.Redirect("/");
         }
 

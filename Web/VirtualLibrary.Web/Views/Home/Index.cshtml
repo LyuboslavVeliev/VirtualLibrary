@@ -1,5 +1,4 @@
-﻿@using VirtualLibrary.Common
-@using VirtualLibrary.Web.ViewModels.Book
+﻿@using VirtualLibrary.Web.ViewModels.Book
 @model IEnumerable<DisplayBookModel>
 @{ this.ViewData["Title"] = "Home Page"; }
 
@@ -13,7 +12,8 @@
     </div>
     <div class="col-md-3">
         <h3>
-            <label for="title">@book.Title</label>
+            <a asp-controller="Book" asp-action="Details" asp-route-id="@book.Id">@book.Title</a>
         </h3>
     </div>
-</div>}
+</div>
+}

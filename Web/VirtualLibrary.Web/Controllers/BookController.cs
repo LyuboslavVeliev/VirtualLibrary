@@ -15,11 +15,13 @@
     {
         private IBooksService booksService;
         private IGenresService genresService;
+        private IAuthorsService authorsService;
 
-        public BookController(IBooksService booksService, IGenresService genresService)
+        public BookController(IBooksService booksService, IGenresService genresService, IAuthorsService authorsService)
         {
             this.booksService = booksService;
             this.genresService = genresService;
+            this.authorsService = authorsService;
         }
 
         [HttpPost]
@@ -28,14 +30,14 @@
         {
             if (!this.ModelState.IsValid)
             {
+                inputBookModel.Author = this.authorsService.GetList();
                 inputBookModel.Genre = this.genresService.GetList();
                 return this.View(inputBookModel);
             }
 
             await this.booksService.CreateBook(inputBookModel.Title, inputBookModel.Description, inputBookModel.Image,
-                inputBookModel.ReleaseDate, inputBookModel.AuthorName);
+                inputBookModel.ReleaseDate);
 
-            // return this.View(inputBookModel);
             return this.Redirect("/");
         }
 
@@ -44,10 +46,17 @@
         {
             var book = new InputBookModel
             {
+                Author = this.authorsService.GetList(),
                 Genre = this.genresService.GetList(),
             };
 
             return this.View(book);
+        }
+
+        [Route("/Book/Details/{id:int}")]
+        public async Task<IActionResult> Details(int id)
+        {
+            return this.View(this.booksService.Details(id));
         }
     }
 }
