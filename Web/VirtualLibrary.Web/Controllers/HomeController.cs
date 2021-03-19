@@ -10,6 +10,7 @@
     using VirtualLibrary.Data.Models;
     using VirtualLibrary.Web.ViewModels.Book;
     using VirtualLibrary.Services.Mapping;
+    using Microsoft.AspNetCore.Mvc.Rendering;
 
     public class HomeController : BaseController
     {
@@ -20,15 +21,15 @@
             this.bookrep = bookrep;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(string searchString)
         {
             var books = this.bookrep.All().To<DisplayBookModel>().ToList();
 
-            //var books = this.bookrep.All().Select(b => new DisplayBookModel
-            //{
-            //    Title = b.Title,
-            //    Image = b.Image,
-            //}).ToList();
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                books = books.Where(b => b.Title.Contains(searchString))
+                    .ToList();
+            }
 
             return this.View(books);
         }
