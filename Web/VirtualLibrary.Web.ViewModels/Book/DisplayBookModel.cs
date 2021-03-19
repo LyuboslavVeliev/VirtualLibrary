@@ -6,6 +6,7 @@
     using VirtualLibrary.Services.Mapping;
     using VirtualLibrary.Data.Models;
     using AutoMapper;
+    using Microsoft.AspNetCore.Mvc.Rendering;
 
     public class DisplayBookModel : IMapFrom<Book>, IHaveCustomMappings
     {
